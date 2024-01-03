@@ -1,14 +1,59 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sitio web-prueba</title>
+    <title>Cambia de Color</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            transition: background-color 0.2s ease;
+        }
+
+        div {
+            display: flex;
+            align-items: center;
+        }
+
+        button {
+            width: 120px;
+            height: 60px;
+            border-radius: 12px;
+            background: skyblue;
+            color: white;
+            border: solid;
+            cursor: pointer;
+            margin: 10px; /* Ajusta el margen */
+            transition: background-color 0.3s ease; /* Agregamos una transición suave */
+        }
+
+        button:hover {
+            background: #4BA0E7;
+        }
+    </style>
 </head>
-<body bgcolor="#31504F">
-    <section id="ejemplo">
-        <h1>HOLA MUNDO</h1>
-        <h2>Hola</h2>
+<body>
+    <section>
+        <h1>Botones para cambiar y reiniciar el color de fondo</h1>
     </section>
+    <div>
+        <button onclick="cambiarColor()">Cambiar</button>
+        <button onclick="reiniciarColor()">Reiniciar</button>
+    </div>
+
+    <script>
+        function cambiarColor() {
+            const color = '#' + Math.floor(Math.random()*16777215).toString(16);
+            document.body.style.backgroundColor = color;
+        }
+
+        function reiniciarColor() {
+            document.body.style.backgroundColor = '#FFFFFF';
+        }
+    </script>
 </body>
 </html>

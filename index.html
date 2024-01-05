@@ -3,63 +3,178 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cambia de Color</title>
+    <title>Mi Currículum</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
         body {
+            font-family: 'Poppins', sans-serif;
+            margin: 30px;
+            padding: 0;
             display: flex;
-            flex-direction: column;
-            align-items: center;
             justify-content: center;
-            height: 100vh;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #87CEEB; /* Azul claro */
+            padding: 30px;
+            text-align: center;
+            margin: -20px -20px 20px -20px; /* Ajuste de márgenes para que se mezcle con el contenedor */
+            display: flex;
+            align-items: center; /* Centra verticalmente los elementos dentro de header */
+        }
+        .profile-image {
+            width: 100px; /* Ajusta el ancho de la imagen según tus necesidades */
+            height: auto; /* Ajusta la altura de la imagen automáticamente */
+            margin-right: 15px; /* Espacio entre la imagen y el texto */
+        }
+        hgroup {
+            text-align: left; /* Alinea el texto a la izquierda */
+        }
+        h1, h2 {
+            color: #333;
             margin: 0;
-            font-family: 'Poppins', sans-serif;
-            transition: background-color 0.2s ease;
-            font-size: 20px;
+        }
+        h1 {
+            font-size: 3em; /* Ajusta el tamaño del nombre */
+            font-weight: bold; /* Hace que el texto sea más grueso */
+        }
+        h2 {
+            font-size: 1.2em; /* Ajusta el tamaño del rol */
+            color: #555; /* Color más oscuro para el rol */
+        }
+        .container {
+            width: 80%;
+            max-width: 800px;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden; /* Añadido para contener bordes flotantes */
+        }
+        p {
+            display: flex;
+            line-height: 1.5;
+            color: #666;
+        }
+        section {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #ddd;
+        }
+        .social-links {
+            margin-top: 20px;
+        }
+        .social-links a {
+            display: inline-block;
+            margin-right: 15px;
+            text-decoration: none;
+        }
+        .social-links i {
+            font-size: 24px;
+            color: #007BFF;
+        }
+        /* Media query para pantallas más pequeñas (ej. dispositivos móviles) */
+        @media (max-width: 600px) {
+            header {
+                flex-direction: column; /* Cambia la dirección a columna para dispositivos móviles */
+                text-align: center;
+            }
+            .profile-image {
+                margin-right: 0; /* Elimina el margen a la derecha en dispositivos móviles */
+                margin-bottom: 10px; /* Espacio entre la imagen y el texto en dispositivos móviles */
+            }
+            .logo-languages {
+                flex-direction: column; /* Cambia la dirección a columna para dispositivos móviles */
+                text-align: center;   
+            }
+        }
+        .logo-languages {
+            display: flex;
+            padding: 15px;
+        }
+        .logo-language {
+            width: 40px;
+            height: 40px;
+            padding: 10px;
+        }
+        a {
+            text-decoration: none;
+            color: #000;
         }
 
-        div {
-            display: flex;
+        /* Estilos para los enlaces con la clase "enlace-con-imagen" */
+        .enlace-con-imagen {
+            display: inline-flex;
             align-items: center;
         }
 
-        button {
-            width: 120px;
-            height: 60px;
-            border-radius: 12px;
-            background: rgb(147, 159, 163);
-            color: white;
-            border: solid;
-            cursor: pointer;
-            margin: 10px; /* Ajusta el margen */
-            transition: background-color 0.3s ease; /* Agregamos una transición suave */
-            font-size: 20px;
-            font-family: 'Poppins', sans-serif;
-        }
-
-        button:hover {
-            background: #c5d4df;
+        /* Estilos para la imagen del logo en los enlaces con la clase "enlace-con-imagen" */
+        .enlace-con-imagen img {
+            width: 30px;
+            height: auto;
+            margin-right: 5px;
         }
     </style>
 </head>
 <body>
-    <section>
-        <h1>Botones para cambiar y reiniciar el color de fondo</h1>
-    </section>
-    <div>
-        <button onclick="cambiarColor()">Cambiar</button>
-        <button onclick="reiniciarColor()">Reiniciar</button>
-    </div>
 
-    <script>
-        function cambiarColor() {
-            const color = '#' + Math.floor(Math.random()*16777215).toString(16);
-            document.body.style.backgroundColor = color;
-        }
-
-        function reiniciarColor() {
-            document.body.style.backgroundColor = '#FFFFFF';
-        }
-    </script>
-</body>
-</html>
+    <div class="container">
+        <header>
+            <img src="./assets/images/profile.png" alt="Imagen de perfil" class="profile-image">
+            <hgroup>
+                <h1>Luis Gonzalo</h1>
+                <h2>Desarrollador Junior</h2>
+            </hgroup>
+        </header>
+        <section>
+            <h2>Sobre Mi</h2>
+            <p>Soy Luis Gonzalo, un apasionado estudiante de desarrollo de software en busca de oportunidades para aprender y crecer. Aunque mi experiencia es limitada, he trabajado en proyectos personales utilizando lenguajes como python y java. Mi enfoque es aprender rápidamente y aplicar mis conocimientos de manera práctica.</section>
+        <section>
+            <h2>Educacion</h2>
+            <p>secundaria culminada en Institución Educativa Felipe Santiago Estenos</p>
+            <p>perteneciente al Tercio Superior</p>
+        </section>
+        <section>
+            <h2>Experiencia</h2>
+            <p><strong>Desarrollado de juegos simples</strong> - principalmente con python y java </p>
+            <p>-Pelea : juego de lucha por turnos del jugador contra un npc programado en pygame</p>
+            <p>-Aviones : juego de esquivar asteroides en el espacio e ir acumulando puntos al avanzar</p>
+        </section>
+        <section>
+            <div class="lenguajes">
+                <h2>Lenguajes de Programacion</h2>
+                <div class="logo-languages">
+                    <img src="./assets/images/javascript-original.svg" alt="java-logo" class="logo-language">
+                    <p>Java</p>
+                    <img src="./assets/images/python-original.svg" alt="python-logo" class="logo-language">
+                    <p>Python</p>
+                    <img src="./assets/images/html5-original.svg" alt="HTML-logo" class="logo-language">
+                    <p>HTML</p>
+                    <img src="./assets/images/css3-plain.svg" alt="CSS-logo" class="logo-language">
+                    <P>CSS</P>
+                </div>
+            </div>
+            <div>
+                <h2>Habilidades</h2>
+                <p>-desarrollo web</p>
+                <p>-Creación de código</p>
+                <p>-Documentación de desarrollos</p>
+                <p>-Capacidad analítica</p>
+                <p>-Gestión de incidencias</p>
+                <p>-Colaboración interdisciplinar</p>
+                <p>-Resolución de problemas</p>
+            </div>
+        </section>
+        <section>
+            <li class="mb-3">
+                <a href="https://github.com/devlgpa" target="_blank" class="enlace-con-imagen">
+                    <img src="./assets/images/github-mark.svg" alt="GitHub Logo">
+                    devlgpa
+                </a>
+            </li>
+            
+        </section>
+    </div>   
